@@ -1,6 +1,8 @@
+autostart/
 balena-etcher/
 bcompare/
 BetterDiscord/
+Bitwarden/
 btop/
 cef_user_data/
 Code/
@@ -12,7 +14,7 @@ Foxit Software/
 github-copilot/
 GitKraken/
 google-chrome/
-Jetbrains/
+JetBrains/
 lvim/
 menus/
 nano/
@@ -21,6 +23,7 @@ obsidian/
 pulse/
 qBittorrent/
 ristretto/
+rofi/
 spotify/
 systemd/
 Thunar/
@@ -29,3 +32,14 @@ volumeicon/
 xed/
 xfce4/
 yay/
+EOS-greeter.conf
+eos-update-notifier.first_init
+mimeapps.list
+pavucontrol.ini
+QtProject.conf
+reflector-simple-free-params.txt
+user-dirs.dirs
+user-dirs.locale
+zoom.conf
+zoomus.conf
+

@@ -1,0 +1,255 @@
+# Get editor completions based on the config schema
+"$schema" = 'https://starship.rs/config-schema.json'
+
+# Inserts a blank line between shell prompts
+add_newline = true
+
+continuation_prompt = "[ ](bold fg:yellow)"
+
+format = """
+$directory \
+($git_branch $git_commit ($git_state )$git_metrics$git_status)\
+$c$golang$java$lua$python$rust\
+$fill\
+$time
+($sudo$hostname$username )$character
+"""
+
+# format = """
+# ([](fg:blue)($sudo )($hostname$username)[](fg:blue) )\
+# [](fg:blue)$directory[](fg:blue) \
+# [](fg:blue)($git_branch $git_commit ($git_state )$git_metrics$git_status)[](fg:blue)\
+# $c$golang$java$lua$python$rust\
+# $fill\
+# $time
+# $character
+# """
+
+# # Style String Options
+# bold
+# italic
+# underline
+# dimmed
+# inverted  # Inverts the foreground and background colors
+# blink
+# hidden
+# strikethrough
+# bg:<color>
+# fg:<color>
+# <color>
+# none
+
+palette = "catppuccin-mocha"
+[palettes.catppuccin-mocha]
+base = "#1E1E2E"
+blue = "#89B4FA"
+crust = "#11111B"
+cyan = "#00FFFF"
+darkblue = "#545AA7"
+flamingo = "#F2CDCD"
+green = "#A6E3A1"
+green2 = "#1dd3b0"
+lavender = "#B4BEFE"
+mantle = "#181825"
+maroon = "#EBA0AC"
+mauve = "#CBA6F7"
+overlay1 = "#7F849C"
+overlay2 = "#9399b2"
+peach = "#FAB387"
+pink = "#F5C2E7"
+red = "#F38BA8"
+rojo = "#d81159"
+rosewater = "#F5E0DC"
+sapphire = "#74C7EC"
+sky = "#89DCEB"
+subtext0 = "#A6ADC8"
+subtext1 = "#BAC2DE"
+surface0 = "#313244"
+surface1 = "#45475A"
+surface2 = "#585B70"
+teal = "#94E2D5"
+text = "#CDD6F4"
+yellow = "#F9E2AF"
+
+# One line prompt
+[line_break]
+disabled = false
+
+[cmd_duration]
+disabled = true
+
+[hostname]
+disabled = false
+format = '[$ssh_symbol$hostname@]($style)'
+ssh_only = false
+ssh_symbol = " "
+style = "bold bg:base fg:green2"
+
+[username]
+disabled = false
+format = '[$user]($style)'
+show_always = true
+style_root = "bold bg:base fg:green2"
+style_user = "bold bg:base fg:green2"
+
+[sudo]
+disabled = false
+format = '[$symbol]($style)'
+style = "bold bg:base fg:rojo"
+symbol = "󰚌 "
+
+[directory]
+disabled = false
+format = '[$path]($style)[$readonly]($read_only_style)'
+home_symbol = "  ~"
+read_only = " "
+read_only_style = "fg:red"
+style = "bold bg:base fg:yellow"
+truncate_to_repo = false
+truncation_length = 99
+truncation_symbol = ".../"
+
+[env_var]
+default = ""
+disabled = true
+format = "[$env_value]($style)"
+style = "bold fg:text"
+symbol = ""
+variable = "VIRTUAL_ENV"
+
+[git_branch]
+disabled = false
+symbol = ""
+# symbol = ""
+format = '[$symbol $branch(:$remote_branch)]($style)'
+style = "bold bg:base fg:pink"
+
+[git_commit]
+disabled = false
+format = '[#$hash$tag]($style)'
+only_detached = false
+style = "bold bg:base fg:pink"
+tag_disabled = false
+tag_symbol = "  🏷 "
+
+[git_state]
+disabled = false
+
+[git_metrics]
+added_style = "bold bg:base fg:green"
+deleted_style = "bold bg:base fg:red"
+disabled = false
+format = '([+$added]($added_style) )([-$deleted]($deleted_style) )'
+
+[git_status]
+ahead = '⇡'
+behind = '⇣'
+conflicted = '='
+deleted = '✘'
+disabled = false
+diverged = '⇕'
+format = '([\[$all_status$ahead_behind\]]($style) )'
+modified = '!'
+renamed = '»'
+staged = '+'
+stashed = '\$'
+style = "bold bg:base fg:red"
+untracked = '?'
+up_to_date = ''
+
+[time]
+disabled = true
+format = '[$time]($style)'
+style = "bold fg:yellow"
+time_format = "%b %d, %T"
+
+[aws]
+disabled = false
+symbol = "  "
+
+[c]
+disabled = false
+# detect_extensions = ['c', 'h', 'cpp', 'hpp']
+format = '[\[$symbol($version(-$name))\]]($style)'
+symbol = " "
+
+[conda]
+disabled = false
+format = 'via [$symbol$environment]($style) '
+ignore_base = true
+style = 'bold fg:green'
+symbol = " "
+
+[docker_context]
+detect_files = ['docker-compose.yml', 'docker-compose.yaml', 'Dockerfile']
+disabled = false
+only_with_files = true
+symbol = " "
+
+[golang]
+disabled = false
+format = '[\[$symbol$version\]]($style)'
+symbol = " "
+
+[haskell]
+disabled = false
+symbol = " "
+
+[hg_branch]
+disabled = false
+symbol = " "
+
+[java]
+disabled = false
+format = '[\[$symbol$version\]]($style)'
+symbol = " "
+
+[julia]
+disabled = false
+symbol = " "
+
+[lua]
+disabled = false
+format = '[\[$symbol$version\]]($style)'
+symbol = " "
+
+[nodejs]
+disabled = false
+symbol = " "
+
+[package]
+disabled = false
+symbol = " "
+
+[python]
+disabled = false
+format = '[\[$symbol$version(  $virtualenv)\]]($style)'
+symbol = " "
+
+[rust]
+disabled = false
+format = '[\[$symbol($version)\]]($style)'
+symbol = " "
+
+[fill]
+disabled = false
+symbol = " "
+
+[character]
+disabled = false
+error_symbol = "[➜](bold fg:red)"
+success_symbol = "[➜](bold fg:rojo)"
+vicmd_symbol = "[➜](bold fg:mauve)"
+# success_symbol = """
+# [\
+# ╷ 
+# ╰─◯](fg:green)"""
+# error_symbol = """
+# [\
+# ╷ 
+# ╰─◯](fg:red)"""
+# vimcmd_symbol = """
+# [\
+# ╷ 
+# ╰─◯](fg:mauve)"""
+format = "$symbol "
